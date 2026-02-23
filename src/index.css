@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@import "tailwindcss";
+
+@theme {
+  /* Colores de Marca */
+  --color-hologram: #00f3ff;
+  --color-hologram-soft: rgba(0, 243, 255, 0.15);
+  --color-hologram-glow: rgba(0, 243, 255, 0.5);
+  
+  /* Animación de Parpadeo (Flicker) */
+  @keyframes flicker {
+    0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+      opacity: 0.99;
+      text-shadow: 0 0 4px var(--color-hologram-glow);
+    }
+    20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+      opacity: 0.4;
+      text-shadow: none;
+    }
+  }
+
+  --animate-hologram-flicker: flicker 2s infinite;
+}
+
+:root {
+  background-color: #030305; /* Negro profundo */
+  color: var(--color-hologram);
+  font-family: 'Inter', system-ui, sans-serif;
+}
