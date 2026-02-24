@@ -3,9 +3,12 @@ import { Inicio } from "./sections/Inicio";
 import { SobreMi } from "./sections/SobreMi";
 import { Proyectos } from "./sections/Proyectos";
 import { Contacto } from "./sections/Contacto";
-import { GlitchWrapper } from "./GltchWrapper";
+import { GlitchWrapper } from "./GlitchWrapper"; // Verifica que el nombre del archivo sea exacto
+import { useAccesibility } from '../context/AccesibilityContext';
 
 const PantallaHolograma = ({ seccion }) => {
+  const { animacionesActivas } = useAccesibility();
+
   return (
     <div className="relative w-full h-[75vh] flex flex-col items-center justify-end pb-12">
       
@@ -28,25 +31,26 @@ const PantallaHolograma = ({ seccion }) => {
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[var(--color-hologram)]" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[var(--color-hologram)]" />
 
-            <GlitchWrapper>
-              <div className="animate-[flicker_4s_infinite] hover:animate-glitch transition-all">
-                {seccion === "inicio" && <Inicio />}
-                {seccion === "sobre mi" && <SobreMi />}
-                {seccion === "proyectos" && <Proyectos />}
-                {seccion === "contacto" && <Contacto />}
-              </div>
-            </GlitchWrapper>
+              {/* El flicker (parpadeo) ahora es condicional aquí */}
+              <GlitchWrapper>
+                <div className={`transition-all duration-500 ${animacionesActivas ? "animate-[flicker_4s_infinite]" : ""}`}>
+                  {seccion === "inicio" && <Inicio />}
+                  {seccion === "sobre mi" && <SobreMi />}
+                  {seccion === "proyectos" && <Proyectos />}
+                  {seccion === "contacto" && <Contacto />}
+                </div>
+              </GlitchWrapper>
+
             </div>
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* HAZ DE LUZ EN V (AJUSTADO MILIMÉTRICAMENTE) */}
+      {/* HAZ DE LUZ EN V */}
       <div
         className="relative w-full h-[15vh] opacity-20 pointer-events-none mt-[-1px]"
         style={{
           background: "linear-gradient(to top, var(--color-hologram), transparent)",
-          // Sincronizado con el ancho max-w-3xl (aprox 28% a 72% del viewport total)
           clipPath: "polygon(28% 0%, 72% 0%, 50.5% 100%, 49.5% 100%)",
         }}
       />

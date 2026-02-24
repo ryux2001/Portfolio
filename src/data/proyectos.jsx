@@ -1,10 +1,10 @@
 export const listaProyectos = [
   {
     id: 1,
-    titulo: "Components PC(En desarrollo)",
+    titulo: "Components PC (En desarrollo)",
     imagen: "/public/ImagenesProyectos/ComponentsPC/Components-pc.png",
     descripcion:
-      "App Web con catalogo de componentes de PC(graficas y procesadores). Compara precios/especificaciones y coloca una nota de calidad/precio ",
+      "App Web con catálogo de componentes de PC (gráficas y procesadores). Compara precios/especificaciones y coloca una nota de calidad/precio ",
     tecnologias: ["JavaScript", "React", "Tailwind", "Supabase"],
     url: "https://componetsviewer.vercel.app/",
     galeria: [
@@ -17,7 +17,7 @@ export const listaProyectos = [
     titulo: "Music Quiz",
     imagen: "/public/ImagenesProyectos/MusicQuiz/MusicQuiz.png",
     descripcion:
-      "Juego de preguntas y respuestas sobre música, con diferentes categorías y niveles de dificultad, con sistema de comodines y puntuacion global ",
+      "Juego de preguntas y respuestas sobre música, con diferentes categorías y niveles de dificultad, con sistema de comodines y puntuación global ",
     tecnologias: ["Javascript", "React", "Supabase"],
     url: "https://rbvalu.page.gd/musicquiz/", // TU ENLACE AQUÍ
     galeria: [
