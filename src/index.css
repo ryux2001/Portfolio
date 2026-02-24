@@ -7,6 +7,7 @@
   --color-hologram: #00f3ff;
   --color-hologram-soft: rgba(0, 243, 255, 0.15);
   --color-hologram-glow: rgba(0, 243, 255, 0.5);
+  --transform-style-3d: preserve-3d;
   
   /* Animación de Parpadeo (Flicker) */
   @keyframes flicker {
@@ -19,12 +20,33 @@
       text-shadow: none;
     }
   }
+  @keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+  }
+
+  @keyframes scanline {
+    0% { bottom: 100%; }
+    100% { bottom: 0%; }
+  }
+
 
   --animate-hologram-flicker: flicker 2s infinite;
 }
+
+
 
 :root {
   background-color: #030305; /* Negro profundo */
   color: var(--color-hologram);
   font-family: 'Inter', system-ui, sans-serif;
+}
+
+.glitch-effect {
+  animation: glitch 0.2s ease-in-out infinite;
+  text-shadow: 2px 0 #00f3ff, -2px 0 #ff00c1;
 }
