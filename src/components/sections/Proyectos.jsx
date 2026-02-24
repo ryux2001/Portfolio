@@ -80,7 +80,7 @@ export const Proyectos = () => {
             </button>
             
             <div className="w-full max-w-6xl flex flex-col items-center gap-6">
-              <h2 className="text-[var(--color-hologram)] font-mono text-sm tracking-[0.4em] uppercase text-center px-10">
+              <h2 className="text-[var(--color-hologram)] font-mono text-sm tracking-[0.4em] uppercase text-center px-10 hover:animate-glitch">
                 {"> VISTA_DE_DETALLE: " + proyecto.titulo}
               </h2>
               

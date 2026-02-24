@@ -21,8 +21,8 @@ export const listaProyectos = [
     tecnologias: ["Javascript", "React", "Supabase"],
     url: "https://rbvalu.page.gd/musicquiz/", // TU ENLACE AQUÍ
     galeria: [
-      "/public/ImagenesProyectos/MusicQuiz/Imagen-1.png",
-      "/public/ImagenesProyectos/MusicQuiz/Imagen-2.png",
+      "/ImagenesProyectos/MusicQuiz/Imagen-1.png",
+      "/ImagenesProyectos/MusicQuiz/Imagen-2.png",
     ],
   },
 ];

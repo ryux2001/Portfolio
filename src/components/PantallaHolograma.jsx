@@ -3,6 +3,7 @@ import { Inicio } from "./sections/Inicio";
 import { SobreMi } from "./sections/SobreMi";
 import { Proyectos } from "./sections/Proyectos";
 import { Contacto } from "./sections/Contacto";
+import { GlitchWrapper } from "./GltchWrapper";
 
 const PantallaHolograma = ({ seccion }) => {
   return (
@@ -27,12 +28,14 @@ const PantallaHolograma = ({ seccion }) => {
               <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-[var(--color-hologram)]" />
               <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-[var(--color-hologram)]" />
 
-              <div className="animate-[flicker_4s_infinite]">
+            <GlitchWrapper>
+              <div className="animate-[flicker_4s_infinite] hover:animate-glitch transition-all">
                 {seccion === "inicio" && <Inicio />}
                 {seccion === "sobre mi" && <SobreMi />}
                 {seccion === "proyectos" && <Proyectos />}
                 {seccion === "contacto" && <Contacto />}
               </div>
+            </GlitchWrapper>
             </div>
           </motion.div>
         </AnimatePresence>

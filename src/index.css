@@ -29,13 +29,102 @@
     100% { transform: translate(0); }
   }
 
+  @keyframes glitch-color {
+  0% {
+    text-shadow: 2px 0 red, -2px 0 purple;
+    filter: hue-rotate(0deg);
+  }
+  20% {
+    text-shadow: -2px 0 cyan, 2px 0 purple;
+    transform: translate(1px, 0);
+  }
+  40% {
+    text-shadow: 2px 0 red, -1px 0 cyan;
+    transform: translate(-1px, 1px);
+  }
+  60% {
+    text-shadow: -2px 0 purple, 2px 0 red;
+    filter: hue-rotate(90deg);
+  }
+  80% {
+    text-shadow: 2px 0 cyan, -2px 0 purple;
+    transform: translate(1px, -1px);
+  }
+  100% {
+    text-shadow: none;
+    filter: hue-rotate(0deg);
+  }
+}
+
   @keyframes scanline {
     0% { bottom: 100%; }
     100% { bottom: 0%; }
   }
 
+  @keyframes glitch-slice {
+  0% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+  20% {
+    transform: translate(-10px, 2px);
+    clip-path: inset(10% 0 40% 0); /* Corta una franja superior */
+  }
+  40% {
+    transform: translate(10px, -2px);
+    clip-path: inset(60% 0 10% 0); /* Corta una franja inferior */
+  }
+  60% {
+    transform: translate(-5px, 5px);
+    clip-path: inset(30% 0 30% 0); /* Corta el centro */
+  }
+  80% {
+    transform: translate(5px, -5px);
+    clip-path: inset(80% 0 5% 0);
+  }
+  100% {
+    transform: translate(0);
+    clip-path: inset(0 0 0 0);
+  }
+}
 
-  --animate-hologram-flicker: flicker 2s infinite;
+/*Modificar para parpadeos*/
+  --animate-hologram-flicker: flicker 100s infinite;
+}
+
+.animate-glitch {
+  animation: glitch-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+}
+.glitch-active {
+  animation: glitch-slice 0.2s infinite;
+  filter: drop-shadow(-2px 0 #ff0000) drop-shadow(2px 0 #00f3ff);
+}
+
+/* Creamos dos capas fantasma que se mueven en direcciones opuestas */
+.glitch-active::before,
+.glitch-active::after {
+  content: attr(data-text); /* Opcional: para texto */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit; /* Copia el fondo del padre */
+  pointer-events: none;
+}
+
+.glitch-active::before {
+  left: 5px;
+  text-shadow: -2px 0 #ff0000;
+  animation: glitch-slice 0.2s dark-mode infinite;
+  clip-path: inset(40% 0 61% 0);
+}
+
+.glitch-active::after {
+  left: -5px;
+  text-shadow: 2px 0 #00f3ff;
+  animation: glitch-slice 0.2s reverse infinite;
+  clip-path: inset(10% 0 80% 0);
 }
 
 
