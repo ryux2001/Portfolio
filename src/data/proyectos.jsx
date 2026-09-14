@@ -10,6 +10,9 @@ export const listaProyectos = [
     galeria: [
       "/ImagenesProyectos/ComponentsPC/Imagen-1.png",
       "/ImagenesProyectos/ComponentsPC/Imagen-2.png",
+      "/ImagenesProyectos/ComponentsPC/Imagen-3.png",
+      "/ImagenesProyectos/ComponentsPC/Imagen-4.png",
+      "/ImagenesProyectos/ComponentsPC/Imagen-5.png",
     ],
   }
 ];
