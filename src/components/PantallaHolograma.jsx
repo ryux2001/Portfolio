@@ -13,7 +13,7 @@ const PantallaHolograma = ({ seccion }) => {
     <div className="relative flex min-h-[min(75dvh,42rem)] w-full flex-col items-center justify-end pb-8 md:pb-12">
       
       {/* CONTENEDOR DE LA PANTALLA */}
-      <div className="relative z-10 w-full max-w-4xl flex items-center justify-center px-0 sm:px-4">
+      <div className={`relative z-10 w-full max-w-4xl flex items-center justify-center px-0 sm:px-4 ${seccion === "proyectos" ? "md:max-w-6xl" : ""}`}>
         <AnimatePresence mode="wait">
           <motion.div
             key={seccion}
@@ -23,7 +23,7 @@ const PantallaHolograma = ({ seccion }) => {
             transition={animacionesActivas ? { duration: 0.3 } : { duration: 0 }}
             className="w-full flex items-center justify-center"
           >
-            <div className="relative w-full max-w-3xl overflow-hidden border border-[var(--color-hologram-soft)] bg-black/40 p-6 shadow-[0_0_40px_var(--color-hologram-faint)] backdrop-blur-md md:p-10">
+            <div className={`relative w-full max-w-3xl overflow-hidden border border-[var(--color-hologram-soft)] bg-black/40 p-6 shadow-[0_0_40px_var(--color-hologram-faint)] backdrop-blur-md md:p-10 ${seccion === "proyectos" ? "md:max-w-5xl" : ""}`}>
               
               {/* Esquinas decorativas */}
               <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-[var(--color-hologram)]" />

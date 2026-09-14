@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useAccessibility } from '../../context/AccessibilityContext';
 
-const techs = ['C#', 'Javascript', 'React js', 'Node js', 'Express js', 'Sql'];
+const techs = ['C#', 'Javascript', 'React js', 'Next js', 'Typescript', 'Sql'];
 
 export const SobreMi = () => {
   const { animacionesActivas } = useAccessibility();

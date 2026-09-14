@@ -13,6 +13,7 @@ export const Proyectos = () => {
   const { animacionesActivas } = useAccessibility();
 
   const proyecto = listaProyectos[indice];
+  const hayVariosProyectos = listaProyectos.length > 1;
 
   const siguiente = () => setIndice((prev) => (prev + 1) % listaProyectos.length);
   const anterior = () => setIndice((prev) => (prev - 1 + listaProyectos.length) % listaProyectos.length);
@@ -121,10 +122,10 @@ export const Proyectos = () => {
         </motion.div>
 
         {/* Botones: Lado a lado en móvil, a los costados en PC */}
-        <button onClick={anterior} aria-label="Proyecto anterior" className="order-2 md:order-1 p-3 border border-[var(--color-hologram-soft)] text-[var(--color-hologram)] hover:bg-[var(--color-hologram-soft)] justify-self-end">
+        <button disabled={!hayVariosProyectos} onClick={anterior} aria-label="Proyecto anterior" className={`order-2 md:order-1 p-3 border border-[var(--color-hologram-soft)] text-[var(--color-hologram)] justify-self-end ${hayVariosProyectos ? "hover:bg-[var(--color-hologram-soft)]" : "opacity-30"}`}>
           <ChevronLeft size={28} />
         </button>
-        <button onClick={siguiente} aria-label="Proyecto siguiente" className="order-3 md:order-3 p-3 border border-[var(--color-hologram-soft)] text-[var(--color-hologram)] hover:bg-[var(--color-hologram-soft)] justify-self-start">
+        <button disabled={!hayVariosProyectos} onClick={siguiente} aria-label="Proyecto siguiente" className={`order-3 md:order-3 p-3 border border-[var(--color-hologram-soft)] text-[var(--color-hologram)] justify-self-start ${hayVariosProyectos ? "hover:bg-[var(--color-hologram-soft)]" : "opacity-30"}`}>
           <ChevronRight size={28} />
         </button>
       </div>
