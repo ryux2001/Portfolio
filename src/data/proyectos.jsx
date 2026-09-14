@@ -19,7 +19,7 @@ export const listaProyectos = [
     descripcion:
       "Juego de preguntas y respuestas sobre música, con diferentes categorías y niveles de dificultad, con sistema de comodines y puntuación global ",
     tecnologias: ["Javascript", "React", "Supabase"],
-    url: "https://rbvalu.page.gd/musicquiz/", // TU ENLACE AQUÍ
+    url: "https://rbvalu.page.gd/musicquiz/",
     galeria: [
       "/ImagenesProyectos/MusicQuiz/Imagen-1.png",
       "/ImagenesProyectos/MusicQuiz/Imagen-2.png",
@@ -32,7 +32,7 @@ export const listaProyectos = [
     descripcion:
       "Aplicación de gestión de gastos enfocada a la paquetería; la hice para mí porque es el trabajo de un familiar y ayudo con la gestión. Esta aplicación cubre sus necesidades.",
     tecnologias: ["Javascript", "React", "Tailwindcss", "Supabase"],
-    url: "https://f-drive.vercel.app/", // TU ENLACE AQUÍ
+    url: "https://f-drive.vercel.app/",
     galeria: [
       "/ImagenesProyectos/FDrive/Imagen-1.png",
       "/ImagenesProyectos/FDrive/Imagen-2.png",

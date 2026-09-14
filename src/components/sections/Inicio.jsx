@@ -1,9 +1,9 @@
-import { useAccesibility } from '../../context/AccesibilityContext';
+import { useAccessibility } from '../../context/AccessibilityContext';
 import { Eye, EyeOff } from 'lucide-react';
 
 export const Inicio = () => {
   // Extraemos el estado y la función del contexto de accesibilidad
-  const { animacionesActivas, setAnimacionesActivas } = useAccesibility();
+  const { animacionesActivas, setAnimacionesActivas } = useAccessibility();
 
   return (
     <div className="w-full flex flex-col items-start text-left font-mono relative py-2">
@@ -24,8 +24,9 @@ export const Inicio = () => {
 
       {/* Botón de Accesibilidad para controlar Glitch y Flicker */}
       <button 
-        onClick={() => setAnimacionesActivas(!animacionesActivas)}
-        className="flex items-center gap-2 px-4 py-2 border border-[var(--color-hologram-soft)] text-[10px] font-mono opacity-50 hover:opacity-100 hover:bg-[var(--color-hologram-soft)] transition-all uppercase tracking-widest"
+         onClick={() => setAnimacionesActivas(!animacionesActivas)}
+         aria-pressed={animacionesActivas}
+         className="flex min-h-[44px] items-center gap-2 border border-[var(--color-hologram-soft)] px-4 py-2.5 text-xs font-mono uppercase tracking-widest text-[var(--color-hologram)] opacity-90 transition-all hover:bg-[var(--color-hologram-soft)] hover:opacity-100"
       >
         {animacionesActivas ? (
           <>

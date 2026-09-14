@@ -1,31 +1,43 @@
-import { useState, useEffect } from 'react';
-import { useAccesibility } from '../context/AccesibilityContext';
+import { useState, useEffect, useRef } from 'react';
+import { useAccessibility } from '../context/AccessibilityContext';
 
 export const GlitchWrapper = ({ children }) => {
-  const { animacionesActivas } = useAccesibility();
+  const { animacionesActivas } = useAccessibility();
   const [isGlitching, setIsGlitching] = useState(false);
+  const nextTimerRef = useRef(null);
+  const endTimerRef = useRef(null);
 
   useEffect(() => {
-    // Si las animaciones están desactivadas, nos aseguramos de apagar el glitch
     if (!animacionesActivas) {
+      // El contenido limpio se renderiza inmediatamente; este estado solo controla la capa decorativa.
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- sincroniza el estado transitorio al apagar el efecto
       setIsGlitching(false);
-      return;
+      return undefined;
     }
 
+    let cancelled = false;
+
     const trigger = () => {
+      if (cancelled) return;
       setIsGlitching(true);
-      
-      // Duración del glitch (flash)
-      setTimeout(() => setIsGlitching(false), 100); 
-      
-      // Aparece de forma errática
-      const randomTime = Math.random() * 4000 + 2000;
-      setTimeout(trigger, randomTime);
+
+      endTimerRef.current = setTimeout(() => {
+        if (!cancelled) setIsGlitching(false);
+      }, 100);
+
+      nextTimerRef.current = setTimeout(trigger, Math.random() * 4000 + 2000);
     };
 
-    const timer = setTimeout(trigger, 2000);
-    return () => clearTimeout(timer);
-  }, [animacionesActivas]); // Escucha cambios en el botón de accesibilidad
+    nextTimerRef.current = setTimeout(trigger, 2000);
+
+    return () => {
+      cancelled = true;
+      clearTimeout(nextTimerRef.current);
+      clearTimeout(endTimerRef.current);
+      nextTimerRef.current = null;
+      endTimerRef.current = null;
+    };
+  }, [animacionesActivas]);
 
   // Si no hay animaciones, renderiza el contenido limpio sin capas extra
   if (!animacionesActivas) return <div className="relative w-full">{children}</div>;
@@ -36,7 +48,7 @@ export const GlitchWrapper = ({ children }) => {
         /* Capa de interferencia visual */
         <div className="absolute inset-0 z-[100] pointer-events-none overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-hologram-soft)] to-transparent h-[2px] w-full animate-scanline" />
-          <div className="absolute inset-0 bg-[rgba(255,0,0,0.05)] mix-blend-screen animate-pulse" />
+          <div className="glitch-layer absolute inset-0 mix-blend-screen animate-pulse" />
         </div>
       )}
       {children}

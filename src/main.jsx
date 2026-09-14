@@ -1,13 +1,16 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { MotionConfig } from 'framer-motion'
 import './index.css'
 import App from './App.jsx'
-import { AccesibilityProvider } from './context/AccesibilityContext';
+import { AccessibilityProvider } from './context/AccessibilityContext';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AccesibilityProvider>
-      <App />
-    </AccesibilityProvider>
+    <MotionConfig reducedMotion="user">
+      <AccessibilityProvider>
+        <App />
+      </AccessibilityProvider>
+    </MotionConfig>
   </StrictMode>,
 )

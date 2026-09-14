@@ -2,21 +2,22 @@ const secciones = ['inicio', 'sobre mi', 'proyectos', 'contacto'];
 
 const BaseProyectora = ({ seccionActiva, setSeccionActiva }) => {
   return (
-    <div className="fixed bottom-6 flex flex-wrap justify-center gap-2 px-3 py-2 bg-black/60 backdrop-blur-md border border-[var(--color-hologram-soft)] rounded-xl max-w-[95vw] z-50 shadow-[0_0_20px_rgba(0,243,255,0.1)]">
+    <nav aria-label="Navegación principal" className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] z-50 flex max-w-[95vw] flex-wrap justify-center gap-2 rounded-xl border border-[var(--color-hologram-soft)] bg-black/60 px-3 py-2 shadow-[0_0_20px_var(--color-hologram-faint)] backdrop-blur-md">
       {secciones.map((id) => (
         <button
           key={id}
           onClick={() => setSeccionActiva(id)}
-          className={`px-3 py-1.5 md:px-5 md:py-2 text-[10px] md:text-xs uppercase font-mono transition-all rounded-lg border ${
+          aria-pressed={seccionActiva === id}
+            className={`flex min-h-[44px] items-center justify-center rounded-lg border px-3 text-xs font-mono uppercase transition-all md:px-5 ${
             seccionActiva === id 
               ? 'bg-[var(--color-hologram-soft)] border-[var(--color-hologram)] text-[var(--color-hologram)] shadow-[0_0_10px_var(--color-hologram-glow)]' 
-              : 'border-transparent text-gray-500 hover:text-white'
+              : 'border-transparent text-gray-300 hover:text-white'
           }`}
         >
           {id}
         </button>
       ))}
-    </div>
+    </nav>
   );
 };
 
