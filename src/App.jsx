@@ -19,7 +19,7 @@ function App() {
       <HazDeLuz />
       
       {/* Pantalla Proyectada en V */}
-      <div id="pantalla" className="relative z-10 w-full">
+      <div id="pantalla" className="relative z-10 -mx-3 w-[calc(100%+1.5rem)] sm:mx-0 sm:w-full">
         <PantallaHolograma seccion={seccionActiva} />
       </div>
 

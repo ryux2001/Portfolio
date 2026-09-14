@@ -13,7 +13,7 @@ const PantallaHolograma = ({ seccion }) => {
     <div className="relative flex min-h-[min(75dvh,42rem)] w-full flex-col items-center justify-end pb-8 md:pb-12">
       
       {/* CONTENEDOR DE LA PANTALLA */}
-      <div className="relative z-10 w-full max-w-4xl flex items-center justify-center px-4">
+      <div className="relative z-10 w-full max-w-4xl flex items-center justify-center px-0 sm:px-4">
         <AnimatePresence mode="wait">
           <motion.div
             key={seccion}
