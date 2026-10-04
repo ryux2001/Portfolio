@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { useAccessibility } from '../../context/AccessibilityContext';
 
-const techs = ['C#', 'Javascript', 'React js', 'Next js', 'Typescript', 'Sql'];
+const techs = ['C#','Java', 'Javascript','Typescript', 'React js', 'Next js','Nest js', 'Sql', 'Docker', 'Git', 'Github'];
 
 export const SobreMi = () => {
   const { animacionesActivas } = useAccessibility();
@@ -13,7 +13,7 @@ export const SobreMi = () => {
         Estudiante de Desarrollo de aplicaciones multiplataforma
       </h3>
       <p className="mb-10 leading-relaxed opacity-80">
-        Estudiante inclinado a desarrollar Apps Web, ofreciendo soluciones claras, enfocándome en la experiencia de usuario.
+        Estudiante inclinado a desarrollar Apps Web y moviles con IA/agentes aplicada, ofreciendo soluciones claras, enfocándome en la experiencia de usuario.
       </p>
 
       <div className="flex flex-wrap justify-center gap-6">
