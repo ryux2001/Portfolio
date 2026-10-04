@@ -32,8 +32,8 @@ export const SobreMi = () => {
                 {grupo.tecnologias.map((tech, indiceTech) => (
                   <li key={tech}>
                     <motion.span
-                      animate={animacionesActivas && grupoIndice === 0 ? { y: [0, -3, 0] } : { y: 0 }}
-                      transition={animacionesActivas ? { duration: 4, repeat: Infinity, delay: indiceTech * 0.25, ease: 'easeInOut' } : { duration: 0 }}
+                      animate={animacionesActivas ? { y: [0, -3, 0] } : { y: 0 }}
+                      transition={animacionesActivas ? { duration: 4, repeat: Infinity, delay: (grupoIndice * 0.45) + (indiceTech * 0.25), ease: 'easeInOut' } : { duration: 0 }}
                       className="inline-block border border-[var(--color-hologram-soft)] bg-black/20 px-3 py-1.5 text-xs font-mono text-[var(--color-hologram)]"
                     >
                       {tech}
