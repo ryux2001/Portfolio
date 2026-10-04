@@ -22,7 +22,7 @@ export const listaProyectos = [
     descripcion:
       "Plataforma de aprendizaje de inglés con IA que permite mantener conversaciones por texto o voz y recibir correcciones contextualizadas de un tutor independiente. Incorpora transcripción local con Whisper, soporte para modelos locales y en la nube, interfaz bilingüe y una arquitectura full stack construida con Next.js y NestJS.",
     tecnologias: ["TypeScript", "Next.js", "Nest.js", "AI"],
-    url: "conversy-ai-self.vercel.app/",
+    url: "https://conversy-ai-self.vercel.app/",
     galeria: [
       "/ImagenesProyectos/Conversi-ai/i1.webp",
       "/ImagenesProyectos/Conversi-ai/i2.webp",
