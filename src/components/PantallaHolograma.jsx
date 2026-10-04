@@ -6,7 +6,7 @@ import { Contacto } from "./sections/Contacto";
 import { GlitchWrapper } from "./GlitchWrapper";
 import { useAccessibility } from '../context/AccessibilityContext';
 
-const PantallaHolograma = ({ seccion }) => {
+const PantallaHolograma = ({ seccion, onNavigate }) => {
   const { animacionesActivas } = useAccessibility();
 
   return (
@@ -34,7 +34,7 @@ const PantallaHolograma = ({ seccion }) => {
               {/* El flicker (parpadeo) ahora es condicional aquí */}
               <GlitchWrapper>
                 <div className={`transition-all duration-500 ${animacionesActivas ? "hologram-flicker" : ""}`} aria-live="polite">
-                  {seccion === "inicio" && <Inicio />}
+                  {seccion === "inicio" && <Inicio onNavigate={onNavigate} />}
                   {seccion === "sobre mi" && <SobreMi />}
                   {seccion === "proyectos" && <Proyectos />}
                   {seccion === "contacto" && <Contacto />}

@@ -98,7 +98,7 @@
 }
 
 .hologram-flicker {
-  animation: flicker 12s infinite;
+  animation: flicker 18s infinite;
 }
 
 .scanlines {
@@ -116,6 +116,78 @@
   contain: paint;
   filter: blur(22px);
   opacity: 0.3;
+}
+
+.hologram-scrollbar {
+  scrollbar-color: var(--color-hologram-glow) rgba(0, 243, 255, 0.06);
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.hologram-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.hologram-scrollbar::-webkit-scrollbar-track {
+  border: 1px solid var(--color-hologram-faint);
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hologram-scrollbar::-webkit-scrollbar-thumb {
+  border: 2px solid rgba(0, 0, 0, 0.65);
+  background: var(--color-hologram-glow);
+}
+
+.hologram-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--color-hologram);
+}
+
+.project-navigation-button,
+.gallery-control {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--color-hologram-soft);
+  padding: 0.5rem 0.75rem;
+  color: var(--color-hologram);
+  font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: background-color 160ms ease-out, border-color 160ms ease-out, color 160ms ease-out;
+}
+
+.project-navigation-button:hover:not(:disabled),
+.gallery-control:hover:not(:disabled) {
+  border-color: var(--color-hologram);
+  background: var(--color-hologram-soft);
+}
+
+.project-navigation-button:disabled,
+.gallery-control:disabled {
+  cursor: not-allowed;
+  opacity: 0.38;
+}
+
+.gallery-nav-button {
+  position: absolute;
+  z-index: 10;
+  display: flex;
+  width: 44px;
+  height: 56px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--color-hologram-soft);
+  background: rgba(0, 0, 0, 0.78);
+  color: var(--color-hologram);
+  transition: background-color 160ms ease-out, border-color 160ms ease-out;
+}
+
+.gallery-nav-button:hover {
+  border-color: var(--color-hologram);
+  background: rgba(0, 243, 255, 0.15);
 }
 
 

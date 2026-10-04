@@ -1,9 +1,6 @@
-import { useAccessibility } from '../../context/AccessibilityContext';
-import { Eye, EyeOff } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
-export const Inicio = () => {
-  // Extraemos el estado y la función del contexto de accesibilidad
-  const { animacionesActivas, setAnimacionesActivas } = useAccessibility();
+export const Inicio = ({ onNavigate }) => {
 
   return (
     <div className="w-full flex flex-col items-start text-left font-mono relative py-2">
@@ -22,23 +19,12 @@ export const Inicio = () => {
         </h2>
       </div>
 
-      {/* Botón de Accesibilidad para controlar Glitch y Flicker */}
-      <button 
-         onClick={() => setAnimacionesActivas(!animacionesActivas)}
-         aria-pressed={animacionesActivas}
-         className="flex min-h-[44px] items-center gap-2 border border-[var(--color-hologram-soft)] px-4 py-2.5 text-xs font-mono uppercase tracking-widest text-[var(--color-hologram)] opacity-90 transition-all hover:bg-[var(--color-hologram-soft)] hover:opacity-100"
+      <button
+        type="button"
+        onClick={() => onNavigate('proyectos')}
+        className="flex min-h-[44px] items-center gap-2 border border-[var(--color-hologram)] bg-[var(--color-hologram-soft)] px-4 py-2.5 text-xs font-mono uppercase tracking-widest text-white transition-colors hover:bg-[var(--color-hologram)] hover:text-black"
       >
-        {animacionesActivas ? (
-          <>
-            <EyeOff size={14} /> 
-            <span>Desactivar efectos visuales</span>
-          </>
-        ) : (
-          <>
-            <Eye size={14} /> 
-            <span>Activar efectos visuales</span>
-          </>
-        )}
+        Ver proyectos <ArrowRight size={15} />
       </button>
 
       {/* Símbolo de terminal decorativo */}

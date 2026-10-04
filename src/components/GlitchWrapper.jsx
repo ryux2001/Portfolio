@@ -51,7 +51,7 @@ export const GlitchWrapper = ({ children }) => {
           <div className="glitch-layer absolute inset-0 mix-blend-screen animate-pulse" />
         </div>
       )}
-      {children}
+      <div className="relative z-10">{children}</div>
     </div>
   );
 };
