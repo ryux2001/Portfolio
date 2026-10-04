@@ -10,10 +10,10 @@ export const SobreMi = () => {
     <div className="flex max-w-2xl flex-col items-center text-center">
       <h2 className="mb-4 text-4xl uppercase tracking-[0.2em]">Sobre mi</h2>
       <h3 className="mb-4 font-mono text-[var(--color-hologram)]">
-        Estudiante de Desarrollo de aplicaciones multiplataforma
+        Estudiante de Desarrollo de Aplicaciones Multiplataforma
       </h3>
       <p className="mb-10 leading-relaxed opacity-80">
-        Estudiante inclinado a desarrollar Apps Web y moviles con IA/agentes aplicada, ofreciendo soluciones claras, enfocándome en la experiencia de usuario.
+        Estudiante inclinado a desarrollar Apps Web y Moviles con IA/agentes aplicados, ofreciendo soluciones claras y personalizadas, enfocándome en la experiencia de usuario.
       </p>
 
       <div className="flex flex-wrap justify-center gap-6">
