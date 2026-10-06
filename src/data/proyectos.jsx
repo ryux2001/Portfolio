@@ -4,7 +4,7 @@ export const listaProyectos = [
     titulo: "CoreXScoring (En desarrollo)",
     imagen: "/ImagenesProyectos/ComponentsPC/Components-pc.png",
     descripcion:
-      "App Web dedicada al analisis de componentes de PC, su principal caracteristica es ofrecer notas en cada aspecto relevante de un componente, con una nota calidad precio influenciada por un precio dinamico que el usuario podra modificar, ademas ofrece comparativas, no solo de componentes, sino de configuraciones completas, y configuraciones recortadas tambien con precio dinamico en tiempo real. Ademas cuenta con un asistente de IA que te puede ayudar con informacion de la web, que productos se encuentran en el catalogo, hacer recomendaciones, tambien puede configurarte y guardarte una configuracion completa, modificar precios y mucho mas.",
+      "App Web dedicada al análisis de componentes de PC, su principal característica es ofrecer notas en cada aspecto relevante de un componente, con una nota calidad-precio influenciada por un precio dinámico que el usuario podrá modificar. Además, ofrece comparativas no solo de componentes, sino también de configuraciones completas y recortadas, con precio dinámico en tiempo real. Además, cuenta con un asistente de IA que te puede ayudar con información de la web, qué productos se encuentran en el catálogo, hacer recomendaciones, configurarte y guardarte una configuración completa, modificar precios y mucho más.",
     tecnologias: ["TypeScript", "Next.js", "Supabase", "AI"],
     url: "https://corexscoring.com/",
     galeria: [
@@ -29,6 +29,24 @@ export const listaProyectos = [
       "/ImagenesProyectos/Conversi-ai/i3.webp",
       "/ImagenesProyectos/Conversi-ai/i4.webp",
       "/ImagenesProyectos/Conversi-ai/i5.webp",
+    ],
+  },
+  {
+    id: 3,
+    titulo: "VA-Routes (En desarrollo)",
+    imagen: "/ImagenesProyectos/VA-Routes/i1.webp",
+    descripcion:
+      "Aplicación móvil desarrollada en Flutter para la gestión de rutas de reparto. Incluye acceso por código de ruta, visualización de puntos de entrega en mapa, creación de plantillas de recorrido y seguimiento de paradas, con navegación a cada destino mediante Google Maps. Utiliza Supabase para almacenar y consultar los datos de rutas. Actualmente lo usan 5 empleados de un cliente",
+    tecnologias: ["Dart", "Flutter", "Supabase"],
+    url: null,
+    galeria: [
+      "/ImagenesProyectos/VA-Routes/i1.webp",
+      "/ImagenesProyectos/VA-Routes/i2.webp",
+      "/ImagenesProyectos/VA-Routes/i3.webp",
+      "/ImagenesProyectos/VA-Routes/i4.webp",
+      "/ImagenesProyectos/VA-Routes/i5.webp",
+      "/ImagenesProyectos/VA-Routes/i6.webp",
+      "/ImagenesProyectos/VA-Routes/i7.webp",
     ],
   }
 ];

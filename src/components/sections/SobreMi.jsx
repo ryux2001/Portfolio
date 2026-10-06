@@ -2,9 +2,9 @@ import { motion } from 'framer-motion';
 import { useAccessibility } from '../../context/AccessibilityContext';
 
 const gruposTecnologias = [
-  { titulo: 'Lenguajes', tecnologias: ['C#', 'Java', 'Javascript', 'Typescript'] },
-  { titulo: 'Frameworks', tecnologias: ['React js', 'Next js', 'Nest js'] },
-  { titulo: 'Datos y herramientas', tecnologias: ['Sql', 'Docker', 'Git', 'Github'] },
+  { titulo: 'Lenguajes', tecnologias: ['C#', 'Java', 'JavaScript', 'TypeScript'] },
+  { titulo: 'Frameworks', tecnologias: ['React', 'Next.js', 'NestJS'] },
+  { titulo: 'Datos y herramientas', tecnologias: ['SQL', 'Docker', 'Git', 'GitHub'] },
 ];
 
 export const SobreMi = () => {
@@ -18,7 +18,7 @@ export const SobreMi = () => {
           Estudiante de Desarrollo de Aplicaciones Multiplataforma
         </h3>
         <p className="max-w-prose text-[15px] leading-7 text-[color:color-mix(in_srgb,var(--color-hologram)_84%,white)]">
-          Estudiante inclinado a desarrollar Apps Web y Moviles con IA/agentes aplicados, ofreciendo soluciones claras y personalizadas, enfocándome en la experiencia de usuario.
+          Estudiante inclinado a desarrollar apps web y móviles con IA y agentes aplicados, ofreciendo soluciones claras y personalizadas, enfocándome en la experiencia de usuario.
         </p>
       </div>
 
