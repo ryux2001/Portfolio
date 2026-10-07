@@ -15,7 +15,7 @@ export const Inicio = ({ onNavigate }) => {
       <div className="flex items-center gap-3 ml-1 mb-8">
         <div className="h-[2px] w-8 md:w-12 bg-[var(--color-hologram)]" />
         <h2 className="text-sm md:text-xl text-[var(--color-hologram)] opacity-90 uppercase tracking-widest">
-          Desarrollador web
+          Desarrollador Fullstack
         </h2>
       </div>
 
